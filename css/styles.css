@@ -44,6 +44,7 @@ p {
 .button {
   font-family: inherit;
   cursor: pointer;
+  padding: 0;
 }
 
 /* Base styles */
@@ -103,6 +104,9 @@ p {
 
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -146,11 +150,15 @@ p {
   color: var(--dark-color);
 }
 
+.nav-link.current {
+  color: var(--pressed-state-color);
+}
+
 .nav-link::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
 
   display: block;
   width: 100%;
@@ -207,6 +215,7 @@ p {
     url(../images/Studio/people-office.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
@@ -263,6 +272,10 @@ p {
 }
 
 .features-list-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   height: 112px;
   padding: 24px 0;
   margin-bottom: 8px;
@@ -383,7 +396,7 @@ p {
 
 .team-list-socials-link:hover,
 .team-list-socials-link:focus {
-  background-color: var(--success-color);
+  background-color: var(--pressed-state-color);
 }
 
 .team-list-icon {
@@ -559,7 +572,11 @@ p {
 
 .footer-container {
   display: flex;
-  gap: 120px;
+  align-items: baseline;
+}
+
+.logo-ontainer {
+  margin-right: 120px;
 }
 
 .footer-logo {
@@ -596,8 +613,8 @@ p {
 }
 
 .footer-list-socials-item {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
 }
 
 .footer-list-socials-link {
